@@ -1,4 +1,10 @@
 <h1>新規投稿</h1>
+<% if @blog.errors.any? %>
+  <%= @blog.errors.count %>件のエラーが発生しました
+  <% @blog.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
 <!--form_with-->
 <%= form_with model:@blog,local:true do |f| %>
 
